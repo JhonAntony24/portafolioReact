@@ -190,3 +190,46 @@
     flex: 1 1 100%;
   }
 }
+
+.btn-download-cv {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 12px 25px;
+  margin-top: 20px;
+
+  background-color: #007bff;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.btn-download-cv:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* ✅ Móviles */
+@media (max-width: 480px) {
+  .btn-download-cv {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+}
+
+/* ✅ Tablets */
+@media (max-width: 768px) {
+  .btn-download-cv {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+}

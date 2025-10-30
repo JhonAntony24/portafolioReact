@@ -11,12 +11,33 @@ const Navbar = () => {
 
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({behavior: "smooth", block: "start" })
+    const section = document.getElementById(sectionId);
+    const navbarHeight = document.querySelector("nav").offsetHeight;
+
+    if (!section) return;
+
+    // Primer y último componente sin centrado
+    if (sectionId === "hero" || sectionId === "contact") {
+      const topPos = section.offsetTop - navbarHeight;
+      window.scrollTo({ top: topPos, behavior: "smooth" });
+    } else {
+      // Centrar las secciones en la pantalla
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      const windowCenter = window.innerHeight / 2;
+      const sectionHeight = section.offsetHeight / 2;
+
+      const scrollToPosition = sectionTop - (windowCenter - sectionHeight) - navbarHeight;
+
+      window.scrollTo({
+        top: scrollToPosition,
+        behavior: "smooth",
+      });
     }
-    setMenuOpen(false)
-  }
+
+    setMenuOpen(false);
+  };
+
+
 
   return (
     <nav>

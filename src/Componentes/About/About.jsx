@@ -1,5 +1,6 @@
 import "./About.css"
 import foto from "../../assets/foto.png"
+import cv from "../../assets/cvjhon.pdf"
 
 export const About = () => {
   return (
@@ -27,6 +28,10 @@ export const About = () => {
                     <span>5</span>
                     <p>Trabajos profesionales</p>
                 </div>
+                {/* Botón de descarga */}
+                <a href={cv} download="cvjhon.pdf" className="btn-download-cv">
+                Descargar CV
+                </a>
             </div>
         </div>
     </div>
