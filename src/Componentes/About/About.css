@@ -1,0 +1,192 @@
+/* === Contenedor principal === */
+.about-datails {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #a8dadc, #bde0fe); /* azul celestino suave */
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 3rem 4rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 4rem auto;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  transition: transform 0.3s ease;
+}
+
+.about-datails:hover {
+  transform: translateY(-5px);
+}
+
+/* === Imagen con borde verde claro === */
+.about-datails img {
+  width: 260px;
+  height: 330px;
+  object-fit: cover;
+  border-radius: 50% / 60%;
+  padding: 4px;
+  background: linear-gradient(135deg, #90ee90, #3cb371); /* verde claro degradado */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+}
+
+.about-datails img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* === Contenedor de información === */
+.about-infos {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 3;
+}
+
+.about-infos h1 {
+  font-size: 2.5rem;
+  color: #1d3557;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+/* === Descripción elegante === */
+.description {
+  color: #1d3557;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  background: rgba(255, 255, 255, 0.35);
+  padding: 1.2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+}
+
+.description:hover {
+  transform: scale(1.02);
+}
+
+/* === Sección de experiencia === */
+.esperience-section {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.experience {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 150px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === Iconos y números === */
+.experience i {
+  color: #3cb371;
+  font-size: 1.2rem;
+}
+
+.experience span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1d3557;
+  margin-top: 0.5rem;
+}
+
+.experience p {
+  font-size: 0.95rem;
+  color: #1d3557;
+  opacity: 0.85;
+}
+
+/* === Efecto decorativo detrás === */
+.circle-bg {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(144, 238, 144, 0.3), transparent); /* verde suave */
+  top: -50px;
+  left: -50px;
+  z-index: 0;
+  border-radius: 50%;
+  filter: blur(50px);
+  animation: float 6s ease-in-out infinite alternate;
+}
+
+/* === Animación sutil del fondo === */
+@keyframes float {
+  0% { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(20px); opacity: 1; }
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .about-datails {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .about-infos h1 {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+
+  .experience {
+    flex: 1 1 45%;
+  }
+
+  .about-datails img {
+    width: 220px;
+    height: 280px;
+  }
+
+  .circle-bg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-datails {
+    padding: 1.5rem;
+  }
+
+  .about-infos h1 {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .about-datails img {
+    width: 170px;
+    height: 220px;
+  }
+
+  .experience {
+    flex: 1 1 100%;
+  }
+}

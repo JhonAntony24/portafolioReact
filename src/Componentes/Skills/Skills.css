@@ -1,0 +1,171 @@
+/* === Contenedor principal === */
+.skills {
+  background: linear-gradient(135deg, #a8dadc, #bde0fe); /* fondo celestino */
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  padding: 3rem 4rem;
+  width: 90%;
+  max-width: 1100px;
+  margin: 4rem auto;
+  text-align: center;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Título principal === */
+.skills h1 {
+  font-size: 2.5rem;
+  color: #1d3557;
+  font-weight: 800;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.skills h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #90ee90, #3cb371);
+  margin: 0.8rem auto 0;
+  border-radius: 2px;
+}
+
+/* === Contenedor de las tarjetas === */
+.skills-base {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
+}
+
+/* === Tarjetas individuales === */
+.skills-box {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem 1.5rem;
+  flex: 1;
+  min-width: 280px;
+  max-width: 340px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(6px);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 25px;
+  padding: 2px;
+  background: linear-gradient(135deg, #90ee90, #3cb371);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.skills-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* === Íconos === */
+.skills-box i {
+  font-size: 2.5rem;
+  color: #3cb371;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skills-box:hover i {
+  transform: rotate(10deg) scale(1.1);
+  color: #2e8b57;
+}
+
+/* === Títulos de habilidad === */
+.skills-box h3 {
+  font-size: 1.5rem;
+  color: #1d3557;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+/* === Descripciones === */
+.skills-box p {
+  font-size: 0.95rem;
+  color: #1d3557;
+  line-height: 1.7;
+  opacity: 0.9;
+  padding: 0 0.5rem;
+}
+
+/* === Fondo decorativo dinámico === */
+.skills::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  top: -80px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(144, 238, 144, 0.25), transparent);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+  animation: float2 8s ease-in-out infinite alternate;
+}
+
+@keyframes float2 {
+  0% { transform: translateY(0); opacity: 0.8; }
+  100% { transform: translateY(20px); opacity: 1; }
+}
+
+/* === Responsive === */
+@media (max-width: 1000px) {
+  .skills-base {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 800px) {
+  .skills {
+    padding: 2.5rem 2rem;
+  }
+
+  .skills h1 {
+    font-size: 2.2rem;
+  }
+
+  .skills-box {
+    flex: 1 1 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .skills {
+    padding: 2rem 1.5rem;
+  }
+
+  .skills h1 {
+    font-size: 1.9rem;
+  }
+
+  .skills-box {
+    padding: 1.5rem;
+  }
+
+  .skills-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .skills-box p {
+    font-size: 0.9rem;
+  }
+}
